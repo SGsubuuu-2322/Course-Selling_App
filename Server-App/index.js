@@ -1,10 +1,12 @@
 import express from "express";
-import userRouter from "./userRouter.js";
-import courseRouter from "./courseRouter.js";
+import userRouter from "./routes/userRouter.js";
+import courseRouter from "./routes/courseRouter.js";
+import adminRouter from "./routes/adminRouter.js";
 
 const app = express();
 
 app.use("/api/v1/user", userRouter);
+app.use("/api/v1/admin", adminRouter);
 app.use("/api/v1/course", courseRouter);
 
 app.listen(3000, () =>
